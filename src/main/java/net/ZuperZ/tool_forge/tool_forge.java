@@ -25,6 +25,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
+//starter tool_forge
 @Mod(tool_forge.MOD_ID)
 public class tool_forge
 {
