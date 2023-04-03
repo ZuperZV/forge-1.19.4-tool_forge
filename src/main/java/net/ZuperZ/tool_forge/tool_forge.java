@@ -1,8 +1,10 @@
 package net.ZuperZ.tool_forge;
 
 import com.mojang.logging.LogUtils;
+import net.ZuperZ.tool_forge.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -38,6 +40,8 @@ public class tool_forge
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
@@ -52,7 +56,9 @@ public class tool_forge
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-
+        if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.TOOL_HAMMER);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
