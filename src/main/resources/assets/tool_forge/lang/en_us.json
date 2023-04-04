@@ -1,3 +1,5 @@
 {
-    "item.tutorialmod.tool_hammer": "Tool Hammer"
+  "item.tool_forge.tool_hammer": "Tool Hammer",
+  
+  "block.tool_forge.deepslate_furnace": "Deepslate Furnace"
 }

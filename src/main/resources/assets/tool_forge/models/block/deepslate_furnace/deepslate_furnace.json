@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_top",
+    "up": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_top",
+    "north": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_front",
+    "east": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_side",
+    "south": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_side",
+    "west": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_side",
+    "particle": "tool_forge:blocks/deepslate_furnace/deepslate_furnace_top"
+  },
+  "render_type": "solid"
+}

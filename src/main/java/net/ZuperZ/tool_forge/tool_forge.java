@@ -1,6 +1,7 @@
 package net.ZuperZ.tool_forge;
 
 import com.mojang.logging.LogUtils;
+import net.ZuperZ.tool_forge.block.ModBlocks;
 import net.ZuperZ.tool_forge.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -41,6 +42,7 @@ public class tool_forge
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -59,6 +61,10 @@ public class tool_forge
         if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.TOOL_HAMMER);
         }
+
+            if(event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+                event.accept(ModBlocks.DEEPSLATE_FURNACE);
+            }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
