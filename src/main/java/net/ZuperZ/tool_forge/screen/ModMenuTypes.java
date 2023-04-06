@@ -14,8 +14,8 @@ public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, tool_forge.MOD_ID);
 
-    public static final RegistryObject<MenuType<DeepslateFurnaceMenu>> DEEPSLATE_FURNACE_MENU =
-            registerMenuType(DeepslateFurnaceMenu::new, "Deepslate_Furnace_Menu");
+    public static final RegistryObject<MenuType<DeepslateFurnaceMenu>> deepslate_furnace_menu =
+            registerMenuType(DeepslateFurnaceMenu::new, "deepslate_furnace_menu");
 
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,

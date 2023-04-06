@@ -12,6 +12,8 @@ package net.ZuperZ.tool_forge.screen;
         import net.minecraftforge.items.CapabilityItemHandler;
         import net.minecraftforge.items.SlotItemHandler;
 
+        import static net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
+
 public class DeepslateFurnaceMenu extends AbstractContainerMenu {
     public final DeepslateFurnaceBlockEntity blockEntity;
     private final Level level;
@@ -22,7 +24,7 @@ public class DeepslateFurnaceMenu extends AbstractContainerMenu {
     }
 
     public DeepslateFurnaceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(ModMenuTypes.DEEPSLATE_FURNACE_MENU.get(), id);
+        super(ModMenuTypes.deepslate_furnace_menu.get(), id);
         checkContainerSize(inv, 3);
         blockEntity = (DeepslateFurnaceBlockEntity) entity;
         this.level = inv.player.level;
@@ -31,7 +33,7 @@ public class DeepslateFurnaceMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-        this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
+        this.blockEntity.getCapability(ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 12, 15));
             this.addSlot(new SlotItemHandler(handler, 1, 86, 15));
             this.addSlot(new SlotItemHandler(handler, 2, 86, 60));

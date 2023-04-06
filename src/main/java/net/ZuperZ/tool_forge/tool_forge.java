@@ -89,7 +89,7 @@ public class tool_forge
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            MenuScreens.register(ModMenuTypes.DEEPSLATE_FURNACE_MENU.get(), DeepslateFurnaceScreen::new);
+            MenuScreens.register(ModMenuTypes.deepslate_furnace_menu.get(), DeepslateFurnaceScreen::new);
         }
     }
 }
