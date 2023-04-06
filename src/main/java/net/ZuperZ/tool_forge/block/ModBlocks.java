@@ -1,5 +1,6 @@
 package net.ZuperZ.tool_forge.block;
 
+import net.ZuperZ.tool_forge.block.custom.DeepslateFurnaceBlock;
 import net.ZuperZ.tool_forge.tool_forge;
 import net.ZuperZ.tool_forge.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -30,8 +31,8 @@ public class ModBlocks {
     };
 
     public static final RegistryObject<Block> DEEPSLATE_FURNACE = registerBlock("deepslate_furnace",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops()));
+            () -> new DeepslateFurnaceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()));
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),

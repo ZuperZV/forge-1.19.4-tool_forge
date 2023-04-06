@@ -1,19 +1,19 @@
 {
-  "variants": {
-    "facing=north": {
-      "model": "tool_forge:block/deepslate_furnace/deepslate_furnace"
-    },
-    "facing=east": {
-      "model": "tool_forge:block/deepslate_furnace/deepslate_furnace",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "tool_forge:block/deepslate_furnace/deepslate_furnace",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "tool_forge:block/deepslate_furnace/deepslate_furnace",
-      "y": 270
-    }
-  }
+	"variants": {
+		"facing=north": {
+			"model": "tool_forge:block/deepslate_furnace"
+		},
+		"facing=south": {
+			"model": "tool_forge:block/deepslate_furnace",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "tool_forge:block/deepslate_furnace",
+			"y": 270
+		},
+		"facing=east": {
+			"model": "tool_forge:block/deepslate_furnace",
+			"y": 90
+		}
+	}
 }

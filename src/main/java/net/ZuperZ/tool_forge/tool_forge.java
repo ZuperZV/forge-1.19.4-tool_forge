@@ -2,8 +2,12 @@ package net.ZuperZ.tool_forge;
 
 import com.mojang.logging.LogUtils;
 import net.ZuperZ.tool_forge.block.ModBlocks;
+import net.ZuperZ.tool_forge.block.entity.ModBlockEntities;
 import net.ZuperZ.tool_forge.item.ModItems;
+import net.ZuperZ.tool_forge.screen.DeepslateFurnaceScreen;
+import net.ZuperZ.tool_forge.screen.ModMenuTypes;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -27,6 +31,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
+import java.awt.*;
+
 // The value here should match an entry in the META-INF/mods.toml file
 //starter tool_forge
 @Mod(tool_forge.MOD_ID)
@@ -43,6 +49,9 @@ public class tool_forge
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -80,7 +89,7 @@ public class tool_forge
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.DEEPSLATE_FURNACE_MENU.get(), DeepslateFurnaceScreen::new);
         }
     }
 }
